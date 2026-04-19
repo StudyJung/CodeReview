@@ -1,5 +1,7 @@
 # CodeReview [ABSOLUTE | STRICT ORDER | NO SKIP | SILENT | PRODUCTION]
 
+$Python = CodeReview.py
+
 ## EXCUTE
 
 - Excute0: './bin/CodeReview.md' and './bin/CodeReview.py' Loading

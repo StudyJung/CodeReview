@@ -16,7 +16,7 @@ $SrcPoint = $SrcDir
 
 $Branch = main
 
-$GitSync = Git(CheckOut or Add or Stage or Commit -> Pull -> Push)
+$GitSync = Git Sync(CheckOut or Add or Stage or Commit -> Pull -> Push)
 
 $Python = CodeReview.py
 
@@ -30,7 +30,7 @@ $Resolve = CodeReview_Resolve.md
 
 $Worker = CodeReview_'작업자'.md(예:CodeReview_정훈희.md - 작업자 = 정훈희)
 
-$Output = CodeReview_년월일_UnixTime.md (예: CodeReview_20020301_1617181920.md)
+$Output = CodeReview_년월일_UnixTime.md(예: CodeReview_20020301_1617181920.md)
 
 $Command = 오늘이 (일,월,수,목)요일이면 '/check'만 사용, 나머지이면 '/review'만 사용
 
