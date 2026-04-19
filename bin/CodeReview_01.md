@@ -18,20 +18,21 @@
 
 ## MUST
 
+**EXECUTE 내용만 행동. EXECUTE 외 다른 행동 금지**
 **{$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Worker} 파일들 절대 사용 금지**
 
-## EXCUTE
+## EXECUTE
 
-- Excute01_1: './bin/CodeReview.md' Loading
+- Execute01_1: './bin/CodeReview.md' Loading
 
-- Excute01_2: {$SrcPoint}에 {$GitSync}
+- Execute01_2: {$SrcPoint}에 {$GitSync}
 
-- Excute01_3: {$Python} clean-output
+- Execute01_3: {$Python} clean-output
 
-- Excute01_4: {$Command} "{$SrcPoint}에서만 {$Scope} 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류
+- Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope} 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류
 
-- Excute01_5: 코드 리뷰 결과 [미결] 이슈들을 최신{$Output}에만 저장
+- Execute01_5: 코드 리뷰 결과 [미결] 이슈들을 최신{$Output}에만 저장
 
-- Excute01_6: 최신{$Output}의 맨위에 요약 갱신 저장
+- Execute01_6: 최신{$Output}의 맨위에 요약 갱신 저장
 
-- Excute01_7: {$WrkPoint}에 {$GitSync}
+- Execute01_7: {$WrkPoint}에 {$GitSync}
