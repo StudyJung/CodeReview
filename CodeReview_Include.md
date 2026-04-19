@@ -1,5 +1,33 @@
 ## P0:Critical - 2026/04/19
 
+#### [P0:Crash nullptr][정훈희][3136b89][Test.cpp/TEST()/Line:5-12]
+[원인] pT nullptr 초기화 후 역참조 크래시
+```cpp
+int* pT = nullptr;
+
+if(  false)
+{
+	printf("T4 %d.\n ", *p5);
+}
+
+printf("T5 %d.\n ", *pT);
+```
+[추천] 역참조 전 nullptr 체크 추가
+```cpp
+int* pT = nullptr;
+
+if (pT != nullptr)
+{
+	printf("T5 %d.\n ", *pT);
+}
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 99, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <br>- 설명 : `pT`가 `nullptr`로 초기화된 후 line 12에서 `*pT`로 역참조하여 런타임 크래시 발생. `int TEST()` 함수 진입 시 즉시 크래시.
+  <br><br>- 의견 : 역참조 전 `nullptr` 체크 추가 또는 유효 포인터 할당 필요. 함수 자체가 테스트 목적이면 함수 제거 고려.
+  <br><br>- 기타 : 커밋 3136b89에서 `main()`의 `*pM` 역참조는 제거되었으나 line 12의 `*pT` T5 역참조는 남아있음. Exclude의 T7(Line:10)과는 다른 라인의 별개 이슈.
+ </details>
+
 #### [P0:Undefined symbol][정훈희][3136b89][Test.cpp/main()/Line:23]
 [원인] 미정의 식별자 pP 역참조
 ```cpp
