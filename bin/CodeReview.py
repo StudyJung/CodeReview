@@ -241,9 +241,7 @@ def cmd_list(args):
 
 # ─── 파일 조작 명령 ────────────────────────────────────────────────────────────
 def cmd_clean_output(args):
-    targets = get_all_outputs() + sorted(
-        f for f in WRK_DIR.glob("CodeReview_????????.md") if f.name not in _FIXED
-    )
+    targets = get_all_outputs()
     if not targets:
         print(f"{G}clean-output 완료{RST}"); return
     for f in targets:
