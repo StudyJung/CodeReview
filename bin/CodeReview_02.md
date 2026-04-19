@@ -1,9 +1,5 @@
 # CodeReview [ABSOLUTE | STRICT ORDER | NO SKIP | SILENT | PRODUCTION]
 
-## MUST
-
-**최신{$Output}, {$Exclude} 쓰기 금지**
-
 ## EXCUTE
 
 - Excute1: './bin/CodeReview.md' Loading
