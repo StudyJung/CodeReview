@@ -4,7 +4,6 @@ int TEST()
 {
 	int* pT = nullptr;
 
-	//printf("T4 %d.\n ", *pT);
 
 	if(  false)
 	{
