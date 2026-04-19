@@ -19,6 +19,7 @@
 ## MUST
 
 **EXECUTE 내용만 행동. EXECUTE 외 다른 행동 금지**
+
 **{$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Worker} 파일들 절대 사용 금지**
 
 ## EXECUTE
