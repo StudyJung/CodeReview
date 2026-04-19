@@ -1,5 +1,76 @@
 ﻿## P2:Medium - 2026/04/19
 
+#### [P2:Header pollution][정훈희][203c200][Test.h/global/Line:5]
+[원인] 헤더에 using namespace std 전역 오염
+```cpp
+using namespace std;
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 35, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <br>- 설명 : `Test.h`에서 `using namespace std;`를 전역 네임스페이스에 선언. 이 헤더를 포함하는 모든 소스가 std 네임스페이스를 강제로 끌어와 이름 충돌 위험 증가.
+  <br><br>- 의견 : 헤더에서 `using namespace std;` 제거하고 필요 시 소스 파일에서만 선언하거나 `std::` 접두어 명시.
+  <br><br>- 기타 : `<iostream>`은 포함되어 있으나 본 헤더에서 사용처 없음. 헤더 자체의 필요성 재검토 필요.
+ </details>
+
+#### [P2:Missing return][정훈희][3136b89][Test.cpp/main()/Line:17-24]
+[원인] int main 반환값 누락
+```cpp
+int main()
+{
+	int* pM = nullptr;
+
+	printf("T2 %d.\n ", 123);
+
+	printf("T3 %d.\n ", *pP);
+}
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 30, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <br>- 설명 : `int main()` 블록 끝에 `return` 문 없음. C++ 표준상 `main`은 암묵적으로 0을 반환하지만 명시적 반환 권장.
+  <br><br>- 의견 : 함수 마지막에 `return 0;` 추가.
+  <br><br>- 기타 : `main` 외 함수라면 UB. 해당 파일의 `TEST()` 함수는 `return true;`가 있으나 타입 불일치 별도 이슈.
+ </details>
+
+#### [P2:Unused variable][정훈희][3136b89][Test.cpp/main()/Line:19]
+[원인] pM 선언 후 미사용
+```cpp
+int* pM = nullptr;
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 20, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <br>- 설명 : 커밋 3136b89에서 `printf("T1 %d.\n ", *pM);`을 제거하면서 `pM`이 선언만 되고 참조되지 않는 dead variable이 됨.
+  <br><br>- 의견 : `pM` 선언 라인 제거.
+  <br><br>- 기타 : 3136b89 커밋이 역참조는 제거했지만 변수 자체 정리 누락. 미사용 변수 경고 발생 가능.
+ </details>
+
+## P3:Low - 2026/04/19
+
+#### [P3:Type mismatch][정훈희][203c200][Test.cpp/TEST()/Line:14]
+[원인] int 반환형에 bool 반환
+```cpp
+int TEST()
+{
+	int* pT = nullptr;
+
+	if(  false)
+	{
+		printf("T4 %d.\n ", *p5);
+	}
+
+	printf("T5 %d.\n ", *pT);
+
+	return true;
+}
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 15, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <br>- 설명 : `int TEST()`의 반환 타입이 int인데 `return true;`로 bool 상수 반환. 암묵 변환되어 1을 반환하지만 비표준적.
+  <br><br>- 의견 : `return 0;` 또는 `return 1;`로 명시적 정수 반환 또는 반환형을 `bool`로 변경.
+  <br><br>- 기타 : 컴파일은 가능하나 의미 혼동 유발. 경고 레벨 상향 시 -Wconversion 경고 발생 가능.
+ </details>
+
+## P2:Medium - 2026/04/19
+
 #### [P2:Header pollution][정훈희][9f0471c][Test.h/global/Line:5]
 [원인] 헤더에 using namespace std 전역 오염
 ```cpp
