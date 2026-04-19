@@ -16,4 +16,6 @@
 
 - Execute02_5: {$Include}의 맨위에 요약 갱신 저장
 
-- Execute02_6: {$WrkPoint}에 {$GitSync}
+- Execute02_6: {$Exclude}의 맨위에 요약 갱신 저장
+
+- Execute02_7: {$WrkPoint}에 {$GitSync}
