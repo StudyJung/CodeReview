@@ -1,7 +1,7 @@
 
-## P1:High - 2026/04/19
+## P0:Critical - 2026/04/19
 
-#### [P1:Main nullptr][정훈희][f625d50][Test.cpp/main()/Line:19-21]
+#### [P0:Main nullptr][정훈희][f625d50][Test.cpp/main()/Line:19-21]
 [원인] pM nullptr 초기화 직후 무조건 역참조
 ```cpp
 int* pM = nullptr;

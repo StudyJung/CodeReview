@@ -22,7 +22,7 @@
 
 - Excute2: {$SrcPoint}에 {$GitSync}
 
-- Excute3: {$Command} "{$SrcPoint}에서 {$Scope} 코드 리뷰" → 리뷰 결과를 이슈별로 [미결]과 [해결]로 분류하여 최신{$Output}를 생성하여 병합
+- Excute3: {$Command} "{$SrcPoint}에서만(다른 파일 참조 금지) {$Scope} 코드 리뷰" → 리뷰 결과만 이슈별로 [미결]과 [해결]로 분류하여 최신{$Output}를 생성하여 병합
 
 - Excute4: 최신{$Output}의 맨위에 요약 저장
 
