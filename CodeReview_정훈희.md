@@ -22,10 +22,10 @@ if (pT != nullptr)
 }
 ```
  <details>
-  <summary>상태 : [미결] , 위험 : 99, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <summary>상태 : [미결] , 위험 : 99, 횟수 : 2, 추적 : 2026/04/19 - 2026/04/19</summary>
   <br>- 설명 : `pT`가 `nullptr`로 초기화된 후 line 12에서 `*pT`로 역참조하여 런타임 크래시 발생. `int TEST()` 함수 진입 시 즉시 크래시.
   <br><br>- 의견 : 역참조 전 `nullptr` 체크 추가 또는 유효 포인터 할당 필요. 함수 자체가 테스트 목적이면 함수 제거 고려.
-  <br><br>- 기타 : 커밋 3136b89에서 `main()`의 `*pM` 역참조는 제거되었으나 line 12의 `*pT` T5 역참조는 남아있음. Exclude의 T7(Line:10)과는 다른 라인의 별개 이슈.
+  <br><br>- 기타 : 커밋 3136b89에서 `main()`의 `*pM` 역참조와 `*pT` T7 라인은 제거되었으나 line 12의 `*pT` T5 역참조는 남아있음. Exclude의 T7(Line:10)과는 다른 라인의 별개 이슈. 동일 패턴 사이드 이펙트 점검 필요.
  </details>
 
 #### [P0:Undefined symbol][정훈희][3136b89][Test.cpp/main()/Line:23]
@@ -40,13 +40,13 @@ int* pP = &P;
 printf("T3 %d.\n ", *pP);
 ```
  <details>
-  <summary>상태 : [미결] , 위험 : 95, 횟수 : 3, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <summary>상태 : [미결] , 위험 : 95, 횟수 : 4, 추적 : 2026/04/19 - 2026/04/19</summary>
   <br>- 설명 : `pP`가 선언되지 않은 식별자로 `main()`에서 역참조 사용되어 컴파일 오류 발생. `Huns.h` 헤더 누락과 겹쳐 빌드 자체 불가.
   <br><br>- 의견 : `pP`를 선언하거나 해당 라인 제거.
   <br><br>- 기타 : `*pT`, `*pM`과 동일 패턴의 미정의 포인터 역참조. 유사 심볼 `p5`도 line 9에 존재.
  </details>
 
-#### [P0:Include missing][정훈희][3136b89][Test.cpp/global/Line:1]
+#### [P0:Include missing][정훈희][9f0471c][Test.cpp/global/Line:1]
 [원인] Huns.h 헤더 파일 존재하지 않음
 ```cpp
 #include "Huns.h"
@@ -56,13 +56,29 @@ printf("T3 %d.\n ", *pP);
 #include "Test.h"
 ```
  <details>
-  <summary>상태 : [미결] , 위험 : 90, 횟수 : 2, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <summary>상태 : [미결] , 위험 : 90, 횟수 : 3, 추적 : 2026/04/19 - 2026/04/19</summary>
   <br>- 설명 : `test/Huns.h` 파일이 저장소에 없음. `test/Test.h`만 존재. 헤더 해석 불가로 컴파일 불가.
   <br><br>- 의견 : `Test.h`로 교체 또는 `Huns.h` 파일 신규 생성.
   <br><br>- 기타 : `Test.h`는 `#include "Tests.h"`를 포함하고 있으나 `Tests.h`도 저장소에 없음. 연쇄적 헤더 누락 문제.
  </details>
 
-#### [P0:Undefined symbol][정훈희][3136b89][Test.cpp/TEST()/Line:9]
+#### [P0:Include missing][정훈희][9f0471c][Test.h/global/Line:3]
+[원인] Tests.h 헤더 파일 존재하지 않음
+```cpp
+#include "Tests.h"
+```
+[추천] 존재하는 헤더로 교체 또는 라인 제거
+```cpp
+// #include "Tests.h" 제거 또는 실제 존재하는 헤더로 교체
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 88, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <br>- 설명 : `test/Tests.h` 파일이 저장소에 없음. `Test.h`에서 `#include "Tests.h"`로 포함 시도하여 컴파일 불가. `Test.cpp`가 `Huns.h`를 포함하고 `Huns.h`가 존재한다면 간접적으로 이 오류가 전파됨.
+  <br><br>- 의견 : 라인 제거 또는 실제 존재하는 헤더로 교체.
+  <br><br>- 기타 : `Test.cpp`의 `#include "Huns.h"` 문제와 함께 2단계 헤더 누락 체인을 형성.
+ </details>
+
+#### [P0:Undefined symbol][정훈희][9f0471c][Test.cpp/TEST()/Line:9]
 [원인] 데드코드 내 미선언 변수 p5 컴파일 에러
 ```cpp
 if(  false)
@@ -75,7 +91,7 @@ if(  false)
 // if(false) 블록 전체 제거
 ```
  <details>
-  <summary>상태 : [미결] , 위험 : 85, 횟수 : 3, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <summary>상태 : [미결] , 위험 : 85, 횟수 : 4, 추적 : 2026/04/19 - 2026/04/19</summary>
   <br>- 설명 : `p5`가 선언되지 않은 식별자로 `TEST()`에서 역참조. `if(false)` 내부이지만 컴파일 대상이므로 빌드 오류 발생. 이중 공백(`if(  false)`)으로 코드 품질도 낮음.
   <br><br>- 의견 : dead code `if(false)` 블록 제거 또는 `p5`를 유효 포인터로 교체.
   <br><br>- 기타 : `*pP`(미선언)과 동일한 미선언 변수 패턴. 데드코드이므로 런타임 영향은 없으나 컴파일 에러로 빌드 차단.
