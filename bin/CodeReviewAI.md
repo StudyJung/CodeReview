@@ -101,3 +101,5 @@ iostream 포함했으나 미사용
 - Excute5: {$Include}의 [미결]이슈들을 {$SrcPoint}에서만 해결 검사 후 해결된 이슈는 {$Include}에만 [해결]로 변경
 
 - Excute6: {$Include}의 [해결]이슈들을 {$Resolve}에 저장, {$Include}의 P0-P1 이슈들은 작업자별 파일 재생성 후 저장
+
+- Excute7: Git Sync
