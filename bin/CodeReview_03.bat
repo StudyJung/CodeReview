@@ -1,8 +1,8 @@
 
 @echo off
 
-set "CLD=D:/SRC/ServerReview"
-set "BIN=D:/SRC/ServerReview/bin"
+set "CLD=D:/SRC/CodeReview"
+set "BIN=D:/SRC/CodeReview/bin"
 set "CODEX_CMD=%USERPROFILE%/AppData/Roaming/npm/codex.cmd"
 
 cd /d %CLD%

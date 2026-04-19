@@ -9,13 +9,13 @@ Git 및 GitHub CLI 세팅
 
 ----------------------------------------------------------------------------------------------
 
-1. 폴더 생성 - C:\개인\ClaudeCodeReview
+1. 폴더 생성 - C:\개인\CodeReview
 
-2. C:\개인\ClaudeCodeReview에 자신의 깃헙(https://github.com/개인/ClaudeCodeReview) 클론
+2. C:\개인\CodeReview에 자신의 깃헙(https://github.com/개인/CodeReview) 클론
 
-3. https://github.com/StudyJung/ClaudeCodeReview 에서 받은 모든 파일을 C:\개인\ClaudeCodeReview에 복사
+3. https://github.com/StudyJung/CodeReview 에서 받은 모든 파일을 C:\개인\CodeReview에 복사
 
-4. 자신의 깃헙(https://github.com/개인/ClaudeCodeReview)으로 푸시
+4. 자신의 깃헙(https://github.com/개인/CodeReview)으로 푸시
 
 ----------------------------------------------------------------------------------------------
 
@@ -33,9 +33,9 @@ CodeReview.md 수정
 
  - 작업자 = 깃헙 작업자 이름들 추가
  
- - $WrkDir = C:\개인\ClaudeCodeReview <- 자신의 코드 리뷰 결과 저장 폴더($WrkGit 클론)
+ - $WrkDir = C:\개인\CodeReview <- 자신의 코드 리뷰 결과 저장 폴더($WrkGit 클론)
 
- - $WrkGit = https://github.com/개인/ClaudeCodeReview <- 자신의 코드 리뷰 결과 저장 깃헙
+ - $WrkGit = https://github.com/개인/CodeReview <- 자신의 코드 리뷰 결과 저장 깃헙
 
  - $WrkPoint = $WrkDir OR $WrkGit <- 결과 저장 위치 선택
 
