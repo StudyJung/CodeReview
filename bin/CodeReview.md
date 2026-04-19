@@ -126,12 +126,14 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 ``` 1줄 이상 필수
 int* pM = nullptr;
 생략...
+
 printf("T1 %d.\n ", *pM);
 ```
 [추천] 포인터 역참조 전 nullptr 체크 추가
 ``` 1줄 이상 필수
 int* pM = nullptr;
 생략...
+
 if (pM != nullptr)
 {
 	printf("T1 %d.\n ", *pM);
