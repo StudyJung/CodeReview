@@ -2,16 +2,16 @@
 
 ## EXCUTE
 
-- Excute1: './bin/CodeReview.md' Loading 
+- Excute03_1: './bin/CodeReview.md' Loading 
 
-- Excute2: './bin/CodeReview.py' Loading
+- Excute03_2: './bin/CodeReview.py' Loading
 
-- Excute3: {$Python} drop-resolve
+- Excute03_3: {$Python} drop-resolve
 
-- Excute4: {$Python} move-resolve
+- Excute03_4: {$Python} move-resolve
 
-- Excute5: {$Python} push-minority
+- Excute03_5: {$Python} push-minority
 
-- Excute6: {$Python} make-workers
+- Excute03_6: {$Python} make-workers
 
-- Excute7: {$WrkPoint}에 {$GitSync}
+- Excute03_7: {$WrkPoint}에 {$GitSync}
