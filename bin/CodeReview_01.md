@@ -16,16 +16,18 @@
 
 **RV7: 스키마 형상 관리나 클라 패킷 하위 호환성, Test Code, Cheat Command, Tracking Log, Tool 관련 된 부분은 중요도를 조금 낮게 책정**
 
+## MUST
+
+**최신{$Output} 파일만 쓰기 허용. 나머지 쓰기 금지**
+
 ## EXCUTE
 
-- Excute0: './bin/CodeReview.md' Loading
+- Excute1: './bin/CodeReview.md' Loading
 
-- Excute1: {$SrcPoint}에 {$GitSync}
+- Excute2: {$SrcPoint}에 {$GitSync}
 
-- Excute2: 코드 리뷰 중 → ({$SrcPoint}에 '[Include]' 주석있는 이슈는 {$Include}에 병합, {$SrcPoint}에 '[Exclude]' 주석있는 이슈는 {$Exclude}에 병합)
+- Excute3: {$Command} "{$SrcPoint}에서 {$Scope} 코드 리뷰" → 리뷰 결과를 이슈별로 [미결]과 [해결]로 분류하여 최신{$Output}를 생성하여 병합
 
-- Excute3: {$Command} "{$SrcPoint}에서 Excute2를 포함하여 {$Scope}범위 코드 리뷰"
-
-- Excute4: 코드 리뷰 후 → (맨위에 요약을 포함하여 [미결]이슈들만 최신{$Output}를 생성하여 병합)
-
+- Excute4: 최신{$Output}의 맨위에 요약 저장
+- 
 - Excute5: {$WrkPoint}에 {$GitSync}

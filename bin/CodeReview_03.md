@@ -4,14 +4,14 @@ $Python = CodeReview.py
 
 ## EXCUTE
 
-- Excute0: './bin/CodeReview.md' and './bin/CodeReview.py' Loading
+- Excute1: './bin/CodeReview.md' and './bin/CodeReview.py' Loading
 
-- Excute1: {$Python} move-resolve
+- Excute2: {$Python} move-resolve
 
-- Excute2: {$Python} make-workers
+- Excute3: {$Python} make-workers
 
-- Excute3: {$Python} push-minority
+- Excute4: {$Python} push-minority
 
-- Excute4: {$Python} clean-output
+- Excute5: {$Python} clean-output
 
-- Excute5: {$WrkPoint}에 {$GitSync}
+- Excute6: {$WrkPoint}에 {$GitSync}
