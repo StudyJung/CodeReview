@@ -1,5 +1,23 @@
 ﻿## P2:Medium - 2026/04/19
 
+#### [P2:Return type mismatch][정훈희][151efc0][Test.cpp/TEST()/Line:14]
+int TEST()에서 return true 반환 — 의미 불명확
+```cpp
+int TEST()
+{
+	// ...
+	return true;
+}
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 35, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/19</summary>
+  <br>- 설명 : `int TEST()`의 반환 타입은 정수지만 `return true;`로 bool 리터럴을 반환. `true`는 int로 암묵 변환(1)되어 컴파일은 통과하지만 반환 의미(성공/실패, 에러코드 등)가 불명확. 호출부에서 의미 해석이 모호
+  <br><br>- 의견 : 반환 목적 명확화 → `return 0;`(정상) / `return -1;`(에러) / 또는 `void`로 변경 후 `return;`으로 대체
+  <br><br>- 기타 : 컴파일 블로킹 P0 이슈(Line:1, 5-7, 11) 해결 후 실제 동작 확인 필요
+ </details>
+
+## P2:Medium - 2026/04/19
+
 #### [P2:Return type mismatch][정훈희][1a9a7d9][Test.cpp/TEST()/Line:14]
 int TEST()에서 return true 반환 — 의미 불명확
 ```cpp
