@@ -9,8 +9,6 @@ int TEST()
 		printf("T4 %d.\n ", *p5);
 	}
 
-	printf("T5 %d.\n ", *pT);
-
 	return true;
 }
 
