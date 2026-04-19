@@ -32,6 +32,6 @@
 
 - Excute01_5: 코드 리뷰 결과 [미결] 이슈들을 최신{$Output}에만 저장
 
-- Excute01_6: 최신{$Output}의 맨위에 요약 저장
+- Excute01_6: 최신{$Output}의 맨위에 요약 갱신 저장
 
 - Excute01_7: {$WrkPoint}에 {$GitSync}
