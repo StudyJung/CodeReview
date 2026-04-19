@@ -2,8 +2,7 @@
 [원인] nullptr 역참조 크래시
 ```cpp
 int* pT = nullptr;
-
-...
+생략...
 
 printf("T5 %d.\n ", *pT);
 ```
