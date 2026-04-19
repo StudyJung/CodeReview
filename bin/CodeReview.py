@@ -8,7 +8,7 @@ CodeReview.py - CodeReview 이슈 관리 헬퍼
   python CodeReview.py list include [--status 미결|해결] [--priority P1] [--reason include]
 
 파일 조작 (이동/삭제, 추론 없음):
-  python CodeReview.py clean-output           # Output 삭제
+  python CodeReview.py clean-output           # Output 이동
   python CodeReview.py drop-resolve           # Output [해결] 삭제
   python CodeReview.py move-resolve           # Include [해결] → Resolve
   python CodeReview.py make-workers           # Include P0-P1 → 작업자별 파일 재생성
@@ -248,11 +248,8 @@ def cmd_clean_output(args):
         print(f"{G}clean-output 완료{RST}"); return
     obj_dir = WRK_DIR / "obj"
     obj_dir.mkdir(exist_ok=True)
-    keep = max(targets, key=lambda f: f.stat().st_mtime)
     for f in targets:
-        if f == keep:
-            print(f"  유지: {f.name}"); continue
-        f.rename(obj_dir / f.name); print(f"  이동: {f.name} → obj/")
+        f.replace(obj_dir / f.name); print(f"  이동: {f.name} → obj/")
     print(f"{G}clean-output 완료{RST}")
 
 def cmd_move_resolve(args):
