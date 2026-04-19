@@ -24,6 +24,8 @@
 
 - Excute3: {$Python} clean-output
 
-- Excute4: {$Command} "{$SrcPoint}에서만(다른 파일 사용 금지) {$Scope} 코드 리뷰" → 리뷰 결과만 이슈별로 [미결]과 [해결]로 분류하여 최신{$Output}에만(다른 파일 사용 금지) 저장
+- Excute4: {$Command} "{$SrcPoint}에서만(다른 파일 사용 금지) {$Scope} 코드 리뷰"
 
-- Excute5: 최신{$Output}의 맨위에 요약 저장
+- Excute5: 리뷰 결과만 이슈별로 [미결]과 [해결]로 분류하여 최신{$Output}에만(다른 파일 사용 금지) 저장
+
+- Excute6: 최신{$Output}의 맨위에 요약 저장
