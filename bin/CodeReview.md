@@ -108,20 +108,30 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 ### 이슈(내용 포함)
 
 1. [중요도:2개의 영단어 요약][작업자명 세글자][대표 커밋 해쉬 1개][파일명 1개/함수면 또는 클래스명 1개/Line:33-100]
-2. 짧게 내용 요약(7단어 이하 요약)
-3. 소스 코드(1줄 이상 필수)
-4. 수정 내용 요약(7단어 이하 요, P0일 경우에만 기입)
-5. 수정 코드(P0일 경우에만 기입)
+2. [원인] 짧게 내용 요약(7단어 이하 요약)
+3. 원인 코드(1줄 이상 필수)
+4. [추천 또는 해결] 수정 내용 요약(7단어 이하 요약, P0일 경우에만 기입 )
+5. 추천 또는 해결 코드([미결]일 경우 P0일 경우에만 추천 코드, [해결]일 경우 해결 코드)
 6. <details></details>
 
 ```` 리포트 이슈 예)
 ## P0:Critical - 갱신일
 
 #### [P0:Crash nullptr][홍길동][60dc356][Huns.cpp/main()/Line:16-17]
-printf nullptr 역참조 크래시
+[원인] printf nullptr 역참조 크래시
 ``` 1줄 이상 필수
-printf("Hello1 T %x. ", *pT);
-printf("Hello2 T %n. ", pT);
+int* pM = nullptr;
+
+printf("T1 %d.\n ", *pM);
+```
+[추천] 포인터 역참조 전 nullptr 체크 추가
+``` 1줄 이상 필수
+int* pM = nullptr;
+
+if (pM != nullptr)
+{
+	printf("T1 %d.\n ", *pM);
+}
 ```
  <details>
   <summary>상태 : [미결,해결] , 위험 : 99(위험도), 횟수 : 1(이슈카운트), 추적 : 2025/01/01 - 2025/03/03(이슈 생성일 - 갱신일)</summary>
@@ -133,14 +143,30 @@ printf("Hello2 T %n. ", pT);
 
 ## P4:Minimal - 2025/03/01
 
-#### [P4:Quality low][아무개][cafa6ab][Huns.h/global/Line:1]
-iostream 포함했으나 미사용
+#### [P4:Low quality][아무개][cafa6ab][Jung.h/global/Line:33]
+[원인] iostream 미사용
 ```
 #include <iostream>
 ```
  <details>
-  <summary>상태 : [미결] , 위험 : 07, 횟수 : 1, 추적 : 2025/01/01 - 2025/03/03</summary>
+  <summary>상태 : [미결] , 위험 : 03, 횟수 : 3, 추적 : 2025/03/01 - 2025/04/03</summary>
+  <br>- 설명 : iostream 미사용
+  <br><br>- 의견 : 없애라
+ </details>
+
+#### [P4:Quality low][아무개][cafa6ab][Huns.h/global/Line:1]
+[원인] iostream 포함했으나 미사용
+```
+#include <iostream>
+```
+[해결] iostream 삭제
+```
+
+```
+ <details>
+  <summary>상태 : [해결] , 위험 : 07, 횟수 : 1, 추적 : 2025/01/01 - 2025/03/03</summary>
   <br>- 설명 : iostream 포함했으나 미사용
   <br><br>- 의견 : 제거해라
  </details>
+ - 사유 : iostream 삭제
 ````
