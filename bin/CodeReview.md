@@ -50,11 +50,11 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 
 ## FILE
 
+**모든 파일들은 미리 읽지말고, 꼭 필요한 곳에서만 읽음**
+
 **UTF-8 NO BOM**
 
-**TitemZone=TZ=Korea, UTC KST**
-
-**모든 md 파일은 미리 읽지말고, 꼭 필요한 곳에서만 읽음**
+**TitemZone=TZ=Korea, UTC KST**
 
 **반드시 {$WrkPoint}안의 ({$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Worker}, {$Output}) 파일들만 사용**
 
@@ -62,11 +62,13 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 
 **{$Resolve}, {$Minority}, {$Worker} 파일들은 절대 읽기 금지, 오직 쓰기만 사용**
 
+**'./obj'폴더와 {$Resolve}, {$Minority}, {$Worker}는 추론에 절대 사용 금지(축약 및 이슈 수정 금지)**
+
 ## RULE
 
 **EXECUTE 내용만 행동. EXECUTE 외 다른 행동 금지**
-
-**'./obj'폴더와 {$Resolve}, {$Minority}, {$Worker}는 추론에 절대 사용 금지(축약 및 이슈 수정 금지)**
+
+**EXECUTE 실행 순서를 철저히 지킴(절대 순서 변경 금지)**
 
 ## REPORT - 리포트 이슈와 요약 작성
 
