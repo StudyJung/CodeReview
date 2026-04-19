@@ -14,6 +14,7 @@
 
 **RV6: 로그인/아웃(중복 접속, 로딩 처리, 좀비, 고스트 등), 재화(Money, Ruby, Bonus, Item 등), 손실/제재/결제(Restriction, Regulation, Consume), 게임플레이(Play, Room, Result) 관련 부분은 연관된 상위 호출 부분까지 자세하고 세밀하게 검토**
 
+**크래쉬는 P0**
 
 ## MUST
 
