@@ -1,5 +1,9 @@
 # CodeReview [ABSOLUTE | STRICT ORDER | NO SKIP | SILENT | PRODUCTION]
 
+## MUST
+
+**{$Resolve}, {$Minority}, {$Worker} 파일들 절대 사용 금지**
+
 ## EXCUTE
 
 - Excute1: './bin/CodeReview.md' Loading
