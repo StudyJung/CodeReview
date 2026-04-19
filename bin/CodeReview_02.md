@@ -1,7 +1,6 @@
 # CodeReview [ABSOLUTE | STRICT ORDER | NO SKIP | SILENT | PRODUCTION]
 
 ## MUST
-**EXECUTE 내용만 행동. EXECUTE 외 다른 행동 금지**
 
 **{$Resolve}, {$Minority}, {$Worker} 파일들 절대 사용 금지**
 
