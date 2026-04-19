@@ -1,9 +1,5 @@
 # CodeReview [ABSOLUTE | STRICT ORDER | NO SKIP | SILENT | PRODUCTION]
 
-## MUST
-
-**{$Include} 파일만 쓰기 허용(나머지 파일들 쓰기 금지)**
-
 ## EXCUTE
 
 - Excute1: './bin/CodeReview.md' Loading

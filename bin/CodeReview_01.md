@@ -16,10 +16,6 @@
 
 **RV7: 스키마 형상 관리나 클라 패킷 하위 호환성, Test Code, Cheat Command, Tracking Log, Tool 관련 된 부분은 중요도를 조금 낮게 책정**
 
-## MUST
-
-**최신{$Output} 파일만 쓰기 허용(나머지 파일들 쓰기 금지)**
-
 ## EXCUTE
 
 - Excute1: './bin/CodeReview.md' Loading
