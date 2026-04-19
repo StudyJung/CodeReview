@@ -1,9 +1,5 @@
 # CodeReview [ABSOLUTE | STRICT ORDER | NO SKIP | SILENT | PRODUCTION]
 
-## MUST
-
-**EXECUTE 내용만 행동. EXECUTE 외 다른 행동 금지**
-
 ## EXECUTE
 
 - Execute03_1: './bin/CodeReview.md' Loading 
