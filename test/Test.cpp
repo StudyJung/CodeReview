@@ -11,16 +11,12 @@ int TEST()
 
 	printf("T5 %d.\n ", *pT);
 
-	printf("T7 %d.\n ", *pT);
-
 	return true;
 }
 
 int main()
 {
 	int* pM = nullptr;
-
-	printf("T1 %d.\n ", *pM);
 
 	printf("T2 %d.\n ", 123);
 
