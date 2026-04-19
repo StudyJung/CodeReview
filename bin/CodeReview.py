@@ -10,7 +10,7 @@ CodeReview.py - CodeReview 이슈 관리 헬퍼
 파일 조작 (이동/삭제, 추론 없음):
   python CodeReview.py clean-output           # Output 삭제
   python CodeReview.py drop-resolve           # Output [해결] 삭제
-  python CodeReview.py move-resolve           # Include,Exclude [해결] → Resolve
+  python CodeReview.py move-resolve           # Include [해결] → Resolve
   python CodeReview.py make-workers           # Include P0-P1 → 작업자별 파일 재생성
   python CodeReview.py push-minority          # Output P2-P3 [미결] → Minority 맨위
 """
@@ -257,25 +257,18 @@ def cmd_clean_output(args):
 
 def cmd_move_resolve(args):
     ic = read_md(INCLUDE); ii = parse_issues(ic)
-    ec = read_md(EXCLUDE); ei = parse_issues(ec)
     inc_resolve   = [i for i in ii if i.status == '해결']
     inc_remaining = [i for i in ii if i.status != '해결']
-    exc_resolve   = [i for i in ei if i.status == '해결']
-    exc_remaining = [i for i in ei if i.status != '해결']
-    resolve = inc_resolve + exc_resolve
-    if not resolve:
-        print("Include/Exclude에 [해결] 이슈 없음"); return
+    if not inc_resolve:
+        print("Include에 [해결] 이슈 없음"); return
     content     = read_md(RESOLVE)
     file_header = extract_file_header(content)
     rest        = content[len(file_header):].lstrip('\n') if file_header else content
-    new_block   = '\n'.join(_render_groups(_group_by_priority(resolve)))
+    new_block   = '\n'.join(_render_groups(_group_by_priority(inc_resolve)))
     combined    = (file_header + '\n\n' + new_block + '\n' + rest) if file_header else (new_block + '\n' + rest)
     write_md(RESOLVE, combined.rstrip('\n') + '\n')
-    if inc_resolve:
-        write_md(INCLUDE, build_sorted(inc_remaining, extract_file_header(ic)))
-    if exc_resolve:
-        write_md(EXCLUDE, build_sorted(exc_remaining, extract_file_header(ec)))
-    print(f"{G}[해결] {len(resolve)}건 → Resolve 맨위 누적 (Include: {len(inc_resolve)}, Exclude: {len(exc_resolve)}){RST}")
+    write_md(INCLUDE, build_sorted(inc_remaining, extract_file_header(ic)))
+    print(f"{G}[해결] {len(inc_resolve)}건 → Resolve 맨위 누적 (Include: {len(inc_resolve)}){RST}")
 
 def cmd_make_workers(args):
     issues = [i for i in parse_issues(read_md(INCLUDE))
@@ -359,7 +352,7 @@ def main():
     pl.set_defaults(func=cmd_list)
 
     sub.add_parser("clean-output",   help="Output·Worker 삭제, Minority 1000개 제한"  ).set_defaults(func=cmd_clean_output)
-    sub.add_parser("move-resolve",  help="Include [해결] → Resolve"                  ).set_defaults(func=cmd_move_resolve)
+    sub.add_parser("move-resolve",  help="Include [해결] → Resolve (Exclude 제외)"   ).set_defaults(func=cmd_move_resolve)
     sub.add_parser("push-minority", help="Output P2-P3 [미결] → Minority 맨위"        ).set_defaults(func=cmd_push_minority)
     sub.add_parser("make-workers",  help="Include P0-P1 → 작업자별 Worker 파일"       ).set_defaults(func=cmd_make_workers)
     sub.add_parser("drop-resolve",  help="Output에서 [해결] 삭제"                     ).set_defaults(func=cmd_drop_resolve)

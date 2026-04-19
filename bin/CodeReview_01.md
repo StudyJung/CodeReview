@@ -22,7 +22,7 @@
 
 - Excute1: {$SrcPoint}에 {$GitSync}
 
-- Excute2: 코드 리뷰 중 → ('[Include]' 주석있는 이슈는 {$Include}에 병합, '[Exclude]' 주석있는 이슈는 {$Exclude}에 병합)
+- Excute2: 코드 리뷰 중 → ({$SrcPoint}에 '[Include]' 주석있는 이슈는 {$Include}에 병합, {$SrcPoint}에 '[Exclude]' 주석있는 이슈는 {$Exclude}에 병합)
 
 - Excute3: {$Command} "{$SrcPoint}에서 Excute2를 포함하여 {$Scope}범위 코드 리뷰"
 
