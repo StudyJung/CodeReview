@@ -14,10 +14,6 @@ $SrcGit = https://github.com/StudyJung/CodeReview
 
 $SrcPoint = $SrcDir
 
-$Branch = main
-
-$GitSync = Git Sync
-
 $Include = CodeReview_Include.md
 
 $Exclude = CodeReview_Exclude.md
@@ -77,7 +73,6 @@ printf("Hello2 T %n. ", pT);
   <br><br>- 의견 : `*pT` 대신 인트형으로 <- 수정 및 개선 등 상세하게 필수
   <br><br>- 기타 : `*pT`가 Add에서도 사용 중 또는 없음 <- 사이드 이펙트 체크, 유사 코드 존재 여부, 관련 문서 링크 등 추가 정보 등 코멘트
  </details>
- - 사유 : 없으면 제외. 해결 시점에만 해결한 내용 포함 또는 '[Exclude]' 또는 '[Include]' 주석이 있는 경우에 병합하지말고 계속 추가 <- 담당자 수동 기입도 가능
 
 ## P4:Minimal - 2025/03/01
 
@@ -103,8 +98,6 @@ iostream 포함했으나 미사용
 - 
 - Excute4: {$Include}에 최신{$Output}의 P0-P1 이슈들만 병합 후 {$Include}에 {$Exclude}의 모든 이슈들 삭제
 
-- Excute5: {$Include}의 [미결]이슈들을 {$SrcPoint}에서만 해결 검사 → 해결된 이슈는 {$Include}에만 [해결]로 변경
+- Excute5: {$Include}의 [미결]이슈들을 {$SrcPoint}에서만 해결 검사 후 해결된 이슈는 {$Include}에만 [해결]로 변경
 
 - Excute6: {$Include}의 [해결]이슈들을 {$Resolve}에 저장, {$Include}의 P0-P1 이슈들은 작업자별 파일 재생성 후 저장
-
-- Excute7: {$WrkPoint}에 {$GitSync}
