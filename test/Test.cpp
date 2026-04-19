@@ -4,7 +4,6 @@ int TEST()
 {
 	int* pT = nullptr;
 
-
 	if(  false)
 	{
 		printf("T5 %d.\n ", *p5);
@@ -16,8 +15,6 @@ int TEST()
 int main()
 {
 	int* pM = nullptr;
-
-	//printf("T1 %d.\n ", *pM);
 
 	printf("T2 %d.\n ", 123);
 
