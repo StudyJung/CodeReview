@@ -6,8 +6,10 @@ int TEST()
 
 	if(  false)
 	{
-		printf("T5 %d.\n ", *p5);
+		printf("T4 %d.\n ", *p5);
 	}
+
+	printf("T5 %d.\n ", *pT);
 
 	return true;
 }
@@ -15,6 +17,8 @@ int TEST()
 int main()
 {
 	int* pM = nullptr;
+
+	printf("T1 %d.\n ", *pM);
 
 	printf("T2 %d.\n ", 123);
 
