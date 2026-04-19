@@ -22,16 +22,16 @@
 
 ## EXCUTE
 
-- Excute1: './bin/CodeReview.md' Loading
+- Excute01: './bin/CodeReview.md' Loading
 
-- Excute2: {$SrcPoint}에 {$GitSync}
+- Excute02: {$SrcPoint}에 {$GitSync}
 
-- Excute3: {$Python} clean-output
+- Excute03: {$Python} clean-output
 
-- Excute4: {$Command} "{$SrcPoint}에서만 {$Scope} 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류
+- Excute04: {$Command} "{$SrcPoint}에서만 {$Scope} 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류
 
-- Excute5: 코드 리뷰 결과 [미결] 이슈들을 최신{$Output}에만 저장
+- Excute05: 코드 리뷰 결과 [미결] 이슈들을 최신{$Output}에만 저장
 
-- Excute6: 최신{$Output}의 맨위에 요약 저장
+- Excute06: 최신{$Output}의 맨위에 요약 저장
 
-- Excute7: {$WrkPoint}에 {$GitSync}
+- Excute07: {$WrkPoint}에 {$GitSync}
