@@ -16,7 +16,7 @@ $SrcPoint = $SrcDir
 
 $Branch = main
 
-$GitSync = Git Sync(CheckOut or Add or Stage or Commit -> Pull -> Push)
+$GitSync = Git(Add or Stage or Commit -> Pull -> Push)
 
 $Python = CodeReview.py
 
