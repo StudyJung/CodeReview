@@ -1,6 +1,6 @@
 #### [P0:Nullptr Crash][정훈희][f123450][Test.cpp/main()/Line:10-20]
 역참조 크래시 main nullptr crash 
-[이슈 코드]```
+```[이슈 코드]
 int* pM = nullptr;
 printf("T1 %d.\n ", *pM);
 ```
