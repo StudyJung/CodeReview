@@ -1,0 +1,13 @@
+# CodeReview [ABSOLUTE | STRICT ORDER | NO SKIP | SILENT | PRODUCTION]
+
+## EXCUTE
+
+- Excute0: './bin/CodeReview.md' Loading
+
+- Excute1: {$Include}에 최신{$Output}의 P0-P1 이슈들만 병합 
+
+- Excute2: {$Include}에 {$Exclude}의 모든 이슈들 삭제
+
+- Excute3: {$Include}의 [미결]이슈들을 {$SrcPoint}에서만 해결 검사 → 해결된 이슈만 {$Include}와 {$Exclude}에 [해결]로 변경
+
+- Excute4: {$WrkPoint}에 {$GitSync}
