@@ -11,6 +11,8 @@ int TEST()
 
 	printf("T5 %d.\n ", *pT);
 
+	printf("T7 %d.\n ", *pT);
+
 	return true;
 }
 
