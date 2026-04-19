@@ -9,5 +9,3 @@
 - Excute3: {$Include}에 {$Exclude}의 모든 이슈들 삭제
 
 - Excute4: {$Include}의 [미결] 이슈들마다 {$SrcPoint}에서 해결되었는지 확인 → 해결된 이슈는 {$Include}에만 [해결]로 변경
-
-- Excute5: {$WrkPoint}에 {$GitSync}
