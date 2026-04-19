@@ -68,7 +68,7 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 
 **EXECUTE 내용만 행동(EXECUTE 외 다른 행동 절대 금지)**
 
-**EXECUTE 실행 순서를 철저히 지킴(순서 변경 절대 금지)**
+**EXECUTE 실행 순서를 철저히 지킴(EXECUTE 실행 순서 변경 절대 금지)**
 
 ## REPORT - 리포트 이슈와 요약 작성
 
