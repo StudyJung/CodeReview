@@ -14,6 +14,6 @@
 
 - Excute03_6: {$Python} make-workers
 
-- Excute03_7: {$Workers}의 맨위에 요약 갱신 저장
+- Excute03_7: {$Worker}의 맨위에 요약 갱신 저장
 
 - Excute03_8: {$WrkPoint}에 {$GitSync}
