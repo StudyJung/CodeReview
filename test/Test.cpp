@@ -18,7 +18,7 @@ int main()
 {
 	int* pM = nullptr;
 
-	//printf("T1 %d.\n ", *pM);
+	printf("T1 %d.\n ", *pM);
 
 	printf("T2 %d.\n ", 123);
 
