@@ -60,6 +60,8 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 
 **{$Include}, {$Exclude}, {$Resolve}, {$Minority} 파일들이 없다면 생성**
 
+**{$Resolve}, {$Minority}, {$Worker} 파일들은 절대 읽기 금지, 오직 쓰기만 사용**
+
 ## RULE
 
 **'.md' 파일에 있는 추론이나 행동만 실행(임의의 추론이나 행동은 금지)**
