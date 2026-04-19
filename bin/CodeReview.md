@@ -34,7 +34,7 @@ $Output = CodeReview_년월일_UnixTime.md(예: CodeReview_20020301_1617181920.m
 
 $Python = CodeReview.py
 
-$Command = '/review'만 사용
+$Command = 오늘이 (일,월,수,목)요일이면 '/check'만 사용, 나머지이면 '/review'만 사용
 
 $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 리뷰', 나머지는 '2주일전 ~ HEAD까지 코드 리뷰'
 
