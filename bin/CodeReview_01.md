@@ -16,6 +16,10 @@
 
 **RV7: 스키마 형상 관리나 클라 패킷 하위 호환성, Test Code, Cheat Command, Tracking Log, Tool 관련 된 부분은 중요도를 조금 낮게 책정**
 
+## MUST
+
+**{$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Worker} 파일들 절대 사용 금지**
+
 ## EXCUTE
 
 - Excute1: './bin/CodeReview.md' Loading
@@ -24,9 +28,9 @@
 
 - Excute3: {$Python} clean-output
 
-- Excute4: {$Command} "{$SrcPoint}에서만(다른 파일 사용 금지) {$Scope} 코드 리뷰"
+- Excute4: {$Command} "{$SrcPoint}에서만 {$Scope} 코드 리뷰"
 
-- Excute5: 리뷰 결과만 이슈별로 [미결]과 [해결]로 분류하여 최신{$Output}에만(다른 파일 사용 금지) 저장
+- Excute5: 리뷰 결과만 이슈별로 [미결]과 [해결]로 분류하여 최신{$Output}에만 저장
 
 - Excute6: 최신{$Output}의 맨위에 요약 저장
 
