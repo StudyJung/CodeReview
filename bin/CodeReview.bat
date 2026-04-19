@@ -19,21 +19,15 @@ if %MOD% equ 1 (
     set MODEL=sonnet-4-6
 )
 
-if %EFF% lss 3 (
-    set EFFORT=max
-) else (
-    set EFFORT=xhigh
-)
-
-@echo %date%, %DAY%, %MOD%, %EFF% --model %MODEL% --effort %EFFORT%
+@echo %date%, %DAY%, %MOD%, %EFF% --model %MODEL%
 
 @echo "CodeReview_01"
 
-claude --dangerously-skip-permissions --model %MODEL% --effort %EFFORT% -p "%BIN%/CodeReview_01.md Execute"
+claude --dangerously-skip-permissions --model %MODEL% --effort max -p "%BIN%/CodeReview_01.md Execute"
 
 @echo "CodeReview_02"
 
-claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort high -p "%BIN%/CodeReview_02.md Execute"
+claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max -p "%BIN%/CodeReview_02.md Execute"
 
 @echo "CodeReview_03"
 
