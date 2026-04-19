@@ -29,5 +29,5 @@
 - Excute3: {$Command} "{$SrcPoint}에서 {$Scope} 코드 리뷰" → 리뷰 결과를 이슈별로 [미결]과 [해결]로 분류하여 최신{$Output}를 생성하여 병합
 
 - Excute4: 최신{$Output}의 맨위에 요약 저장
-- 
+
 - Excute5: {$WrkPoint}에 {$GitSync}
