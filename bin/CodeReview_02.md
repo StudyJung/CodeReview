@@ -14,4 +14,6 @@
 
 - Excute02_4: {$Include}의 [미결] 이슈들마다 {$SrcPoint}에서 해결되었다면 {$Include}에만 [해결]로 변경
 
+- Excute02_4: {$Include}에 맨위에 요약 갱신 저장
+
 - Excute02_5: {$WrkPoint}에 {$GitSync}
