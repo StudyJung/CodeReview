@@ -28,7 +28,7 @@ $Minority = CodeReview_Minority.md
 
 $Resolve = CodeReview_Resolve.md
 
-$Worker = CodeReview_'작업자'.md(예:CodeReview_정훈희.md - 작업자 = 정훈희)
+$Worker = CodeReview_'작업자'.md(예:CodeReview_정훈희.md <- 작업자 = 정훈희)
 
 $Output = CodeReview_년월일_UnixTime.md(예: CodeReview_20020301_1617181920.md)
 

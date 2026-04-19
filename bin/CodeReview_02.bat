@@ -9,4 +9,4 @@ cd /d %CLD%
 
 @echo "CodeReview_02"
 
-claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort high "%BIN%/CodeReview_02.md Execute"
+claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max "%BIN%/CodeReview_02.md Execute"

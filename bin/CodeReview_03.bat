@@ -9,5 +9,5 @@ cd /d %CLD%
 
 @echo "CodeReview_03"
 
-claude --dangerously-skip-permissions --model claude-haiku-4-5 --effort medium "%BIN%/CodeReview_03.md Execute"
+claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max "%BIN%/CodeReview_03.md Execute"
 ::type "%BIN%/CodeReview_03.md" | codex exec --yolo -m gpt-5.4 "Execute"

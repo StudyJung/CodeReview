@@ -46,7 +46,7 @@ if (pM != nullptr)
   <br><br>- 기타 : `main()` 내 Line:27(`*pP`, 미선언)도 유사한 역참조 문제 존재.
  </details>
 
-#### [P0:Crash undeclared][Hns][151efc08][Test.cpp/main()/Line:27]
+#### [P0:Crash undeclared][정훈희][151efc08][Test.cpp/main()/Line:27]
 [원인] 미선언 변수 pP 역참조 컴파일 에러
 ```
 printf("T3 %d.\n ", *pP);
