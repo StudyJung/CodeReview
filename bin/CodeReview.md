@@ -96,7 +96,7 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 | 항목 | 내용 |
 | :--- | :--- |
 | **Git Range** | 2026/03_UPDATE - HEAD ( Commits 100 ) |
-| **Period** | 2025/01/01 00:00:00 - 2025/03/03 11:33:33 |
+| **Period** | 2025/01/01 00:00:00 - 2025/03/03 11:33:33 <- Git Range Time |
 | **Model(Effort)** | claude-opus-4-6 (--effort max) <- 사용 AI model |
 | **Tools** | '/fd -t check', '/check', '/review', '/teammates_check' <- 사용 {$Command} |
 
