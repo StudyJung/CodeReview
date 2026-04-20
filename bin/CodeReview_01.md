@@ -18,11 +18,11 @@
 
 ## MUST
 
-**{$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Worker} 파일들 절대 사용 금지**
+**{$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Workers} 파일들 절대 사용 금지**
 
 ## EXECUTE
 
-- Execute01_1: './bin/CodeReview.md' Loading
+- Execute01_1: './exe/CodeReview.md' Loading
 
 - Execute01_2: {$SrcPoint}에 {$GitSync}
 
