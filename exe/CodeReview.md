@@ -84,9 +84,7 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 
 **{$Include}, {$Exclude}, {$Resolve}, {$Minority} 파일들이 없다면 생성**
 
-**{$Resolve}, {$Minority}, {$Workers} 파일들은 절대 읽기 금지, 오직 쓰기만 사용**
-
-**'./obj'폴더와 {$Resolve}, {$Minority}, {$Workers}는 추론에 절대 사용 금지(축약 및 이슈 수정 금지)**
+**{$Resolve}, {$Minority}, {$Workers} 파일들은 절대 읽기 금지, 이슈 수정없이 오직 그대로 쓰기만 사용**
 
 ## RULE
 
