@@ -22,7 +22,7 @@
 
 ## EXECUTE
 
-- Execute01_1: './exe/CodeReview.md' Loading
+- Execute01_1: './exe/CodeReview.md', './exe/CodeReview.py' Loading
 
 - Execute01_2: {$SrcPoint}에 {$GitSync}
 
