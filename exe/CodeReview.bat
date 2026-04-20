@@ -31,5 +31,5 @@ claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max -p 
 
 @echo "CodeReview_03"
 
-claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max -p "%BIN%/CodeReview_03.md Execute"
+claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort high -p "%BIN%/CodeReview_03.md Execute"
 ::type "%BIN%/CodeReview_03.md" | codex exec --yolo -m gpt-5.4 "Execute" >nul 2>&1
