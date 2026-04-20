@@ -28,7 +28,7 @@
 
 - Execute01_3: {$Python} clean-output
 
-- Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류
+- Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류하고 가장 연관된 커밋의 작업자로 지정
 
 - Execute01_5: 코드 리뷰 결과 [미결] 이슈들만 최신{$Output}을 생성하여 저장
 
