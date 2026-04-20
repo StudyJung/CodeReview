@@ -4,7 +4,7 @@
 @echo off
 
 set "CLD=D:/SRC/CodeReview"
-set "BIN=D:/SRC/CodeReview/bin"
+set "BIN=D:/SRC/CodeReview/exe"
 set "CODEX_CMD=%USERPROFILE%/AppData/Roaming/npm/codex.cmd"
 
 cd /d %CLD%
