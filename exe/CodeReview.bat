@@ -3,7 +3,7 @@
 
 @echo off
 
-set "CLD=D:/SRC/CodeReview"
+set "CLD=D:/SRC/Common"
 set "BIN=D:/SRC/CodeReview/exe"
 set "CODEX_CMD=%USERPROFILE%/AppData/Roaming/npm/codex.cmd"
 
