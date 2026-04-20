@@ -28,7 +28,7 @@
 
 - Execute01_3: {$Python} clean-output
 
-- Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope} 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류
+- Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류
 
 - Execute01_5: 코드 리뷰 결과 [미결] 이슈들을 최신{$Output}에만 저장
 
