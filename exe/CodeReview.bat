@@ -16,7 +16,7 @@ set /A EFF=DAY %% 6
 if %MOD% equ 1 (
     set MODEL=claude-opus-4-7
 ) else (
-    set MODEL=sonnet-4-6
+    set MODEL=claude-sonnet-4-6
 )
 
 @echo %date%, %DAY%, %MOD%, %EFF% --model %MODEL%
