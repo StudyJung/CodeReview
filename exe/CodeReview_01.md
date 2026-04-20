@@ -3,7 +3,7 @@
 ## REVIEW
 
 **RV1: .cpp,.h,.lua,.json,.xml,.ini만 검사**
- 
+
 **RV2: 최신 소스 기준으로 전체적인 소스 변경점을 먼저 파악 후 이슈별 연관된 최근 커밋들 확인**
 
 **RV3: 발견된 이슈의 커밋과 관련된 최신 소스를 체크하여 유사한 문제나 사이드 이펙트가 없는지 확인**
@@ -22,16 +22,10 @@
 
 ## EXECUTE
 
-- Execute01_1: './exe/CodeReview.md', './exe/CodeReview.py' Loading
-
-- Execute01_2: {$SrcPoint}에 {$GitSync}
-
-- Execute01_3: {$Python} clean-output
-
-- Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류하고 가장 연관된 커밋의 작업자로 지정
-
-- Execute01_5: 코드 리뷰 결과 [미결] 이슈들만 최신{$Output}을 생성하여 저장
-
-- Execute01_6: 최신{$Output}의 맨위에 요약 갱신 저장
-
-- Execute01_7: {$WrkPoint}에 {$GitSync}
+* Execute01_1: './exe/CodeReview.md', './exe/CodeReview.py' Loading
+* Execute01_2: {$SrcPoint}에 {$GitSync}
+* Execute01_3: {$Python} clean-output
+* Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위 코드 리뷰" → 코드 리뷰 결과 중 이슈들을 커밋별로 [미결]과 [해결]로 분류
+* Execute01_5: 코드 리뷰 결과 [미결] 이슈들만 최신{$Output}을 생성하여 저장
+* Execute01_6: 최신{$Output}의 맨위에 요약 갱신 저장
+* Execute01_7: {$WrkPoint}에 {$GitSync}
