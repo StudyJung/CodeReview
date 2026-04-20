@@ -30,7 +30,7 @@
 
 - Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위 코드 리뷰" → 코드 리뷰 결과들을 [미결]과 [해결]로 분류
 
-- Execute01_5: 코드 리뷰 결과 [미결] 이슈들을 최신{$Output}에만 저장
+- Execute01_5: 코드 리뷰 결과 [미결] 이슈들만 최신{$Output}을 생성하여 저장
 
 - Execute01_6: 최신{$Output}의 맨위에 요약 갱신 저장
 
