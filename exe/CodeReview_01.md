@@ -12,9 +12,9 @@
 
 **RV5: 로그인/아웃(중복 접속, 로딩 처리, 좀비, 고스트 등), 재화(Money, Ruby, Bonus, Item 등), 손실/제재/결제(Restriction, Regulation, Consume), 게임플레이(Play, Room, Result) 관련 부분은 연관된 상위 호출 부분까지 자세하고 세밀하게 검토**
 
-**RV6: 원인 코드 소스 주석이 이슈와 동일하다면 중요도를 조금 낮게 책정**
+**RV6: 원인 코드 소스 주석이 이슈와 동일하거나 SQL Injection, Silent Bypass 관련은 중요도를 조금 낮게 책정**
 
-**RV7: 스키마 형상 관리나 클라 패킷 하위 호환성, SQL Injection, Silent Bypass, Test Code, Cheat Command, Tracking Log, Tool 관련 된 부분은 중요도를 조금 낮게 책정**
+**RV7: 스키마 형상 관리나 클라 패킷 하위 호환성이나 Test Code, Cheat Command, Tracking Log, Tool 관련은 중요도를 낮게 책정**
 
 ## MUST
 
