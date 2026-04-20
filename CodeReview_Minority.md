@@ -1,4 +1,67 @@
-﻿## P2:Medium - 2026/04/19
+﻿## P2:Medium - 2026/04/20
+
+#### [P2:Header pollution][정훈희][e474964][Test.h/global/Line:5]
+[원인] 헤더에서 using namespace std 전역 오염
+```cpp
+using namespace std;
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 45, 횟수 : 1, 추적 : 2026/04/20 - 2026/04/20</summary>
+  <br>- 설명 : `Test.h` 헤더 최상위에서 `using namespace std;`로 인해 해당 헤더를 포함하는 모든 번역 단위의 전역 네임스페이스가 오염됨. 이름 충돌(symbol clash)과 숨은 의존성 발생 위험.
+  <br><br>- 의견 : 헤더에서 `using namespace` 제거, 필요 시 구현부(cpp)에 한정하거나 명시적 자격(`std::`) 사용.
+  <br><br>- 기타 : 이 헤더가 광범위하게 포함되면 사이드 이펙트가 확산. `#include <iostream>`과 결합되어 컴파일 단위마다 대용량 심볼이 노출.
+ </details>
+
+#### [P2:Missing return][정훈희][e474964][Test.cpp/main()/Line:19-26]
+[원인] int main() 반환값 누락
+```cpp
+int main()
+{
+	int* pM = nullptr;
+
+	printf("T2 %d.\n ", 123);
+
+	printf("T3 %d.\n ", *pP);
+}
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 40, 횟수 : 1, 추적 : 2026/04/20 - 2026/04/20</summary>
+  <br>- 설명 : `int main()`이 `return` 문 없이 끝남. C++에서 `main`은 암묵적 `return 0`이 허용되지만, 경고 옵션(/W4, -Wall)에서 경고가 발생할 수 있고 일관된 코드 스타일 위반.
+  <br><br>- 의견 : `return 0;` 명시 추가로 의도 명확화.
+  <br><br>- 기타 : 실제 실행은 앞단의 `*pP` 역참조에서 크래시/빌드 실패로 도달 불가. 크래시 수정 후에도 스타일 일관성 위해 권장.
+ </details>
+
+#### [P2:Missing include][정훈희][e474964][Test.cpp/global/Line:1]
+[원인] printf 사용에도 cstdio 미포함
+```cpp
+#include "Huns.h"
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 35, 횟수 : 1, 추적 : 2026/04/20 - 2026/04/20</summary>
+  <br>- 설명 : `Test.cpp`에서 `printf`를 다수 사용하지만 `<cstdio>` 또는 `<stdio.h>`를 직접 포함하지 않음. 현재 `Huns.h`가 해당 선언을 간접 제공한다는 보장이 없음.
+  <br><br>- 의견 : `#include <cstdio>` 추가하여 선언 의존성 명시.
+  <br><br>- 기타 : 헤더 누락(Huns.h) 해결과 함께 정리 권장.
+ </details>
+
+## P3:Low - 2026/04/20
+
+#### [P3:Type mismatch][정훈희][e474964][Test.cpp/TEST()/Line:3-17]
+[원인] int 반환 함수에서 bool 상수 반환
+```cpp
+int TEST()
+{
+	생략...
+	return true;
+}
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 15, 횟수 : 1, 추적 : 2026/04/20 - 2026/04/20</summary>
+  <br>- 설명 : `TEST()`가 `int` 반환형이지만 `true`(bool) 반환. 암묵적 변환으로 1이 반환되나 의도가 모호.
+  <br><br>- 의견 : `return 0;` 또는 의도에 맞는 정수 상수 사용. 함수 타입을 `bool`로 바꿀지 검토.
+  <br><br>- 기타 : 앞단에서 실제 크래시로 도달 불가.
+ </details>
+
+## P2:Medium - 2026/04/19
 
 #### [P2:Header pollution][정훈희][5af0c3a][Test.h/global/Line:5]
 [원인] 헤더에 using namespace std 전역 오염
