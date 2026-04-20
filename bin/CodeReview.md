@@ -28,7 +28,21 @@ $Minority = CodeReview_Minority.md
 
 $Resolve = CodeReview_Resolve.md
 
-$Worker = CodeReview_'작업자'.md(예:CodeReview_정훈희.md <- 작업자 = 정훈희)
+$Workers = CodeReview_'작업자'.md(예:CodeReview_정훈희.md - 작업자 = 정훈희)
+
+$Branch = main
+
+$GitSync = Git(Add -> Commit -> Pull -> Push -> Merge)
+
+$Python = CodeReview.py
+
+$Include = CodeReview_Include.md
+
+$Exclude = CodeReview_Exclude.md
+
+$Minority = CodeReview_Minority.md
+
+$Resolve = CodeReview_Resolve.md
 
 $Output = CodeReview_년월일_UnixTime.md(예: CodeReview_20020301_1617181920.md)
 
@@ -57,13 +71,13 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 **TitemZone=TZ=Korea, UTC KST**
 
 
-**반드시 {$WrkPoint}안의 ({$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Worker}, {$Output}) 파일들만 사용**
+**반드시 {$WrkPoint}안의 ({$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Workers}, {$Output}) 파일들만 사용**
 
 **{$Include}, {$Exclude}, {$Resolve}, {$Minority} 파일들이 없다면 생성**
 
-**{$Resolve}, {$Minority}, {$Worker} 파일들은 절대 읽기 금지, 오직 쓰기만 사용**
+**{$Resolve}, {$Minority}, {$Workers} 파일들은 절대 읽기 금지, 오직 쓰기만 사용**
 
-**'./obj'폴더와 {$Resolve}, {$Minority}, {$Worker}는 추론에 절대 사용 금지(축약 및 이슈 수정 금지)**
+**'./obj'폴더와 {$Resolve}, {$Minority}, {$Workers}는 추론에 절대 사용 금지(축약 및 이슈 수정 금지)**
 
 ## RULE
 
