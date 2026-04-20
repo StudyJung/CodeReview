@@ -62,16 +62,6 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 
 * 이슈카운트 = 최신{$Output}의 경우 1, {$Include}에 병합 시점에 신규 이슈라면 1 기존 이슈라면 +1
 
-## FUNCTION
-
-* 위험도 = 01~99점까지 위험이 클수록 높은 점수 <- 중요도 상승, 하락 등에 수치 조정({$Include}에서 P0, P1 이슈만)
-
-* 중요도 = P0:Critical, P1:High, P2:Medium, P3:Low, P4:Minimal(위험도 10점미만 P4보정) <- 이슈 우선 순위 판단하여 업데이트
-
-* 이슈매칭 = 키(제목·커밋·해쉬·라인 등) 완전 일치가 아닌, 제목·파일·함수·설명·내용 등 기준 의미적 동일성으로 판단. 특히 핵심 원인 코드 1줄 변화 비교 주의해서 확인.
-
-* 이슈카운트 = 최신{$Output}의 경우 1, {$Include}에 병합 시점에 신규 이슈라면 1 기존 이슈라면 +1
-
 ## FILE
 
 **모든 파일들은 미리 읽지말고, 꼭 필요한 곳에서만 읽음**
@@ -135,7 +125,7 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
  
 ### 이슈(내용 포함)
 
-1. [중요도:2개의 영단어 요약][작업자명 한글 이름 세글자만][대표 커밋 해쉬 1개][파일명 1개/함수면 또는 클래스명 1개/Line:33-100]
+1. [중요도:2개의 영단어 요약][커밋 해쉬 1개][커밋 해쉬 작업자 이름만][파일명 1개/함수면 또는 클래스명 1개/Line:33-100]
 2. [원인] 짧게 내용 요약(7단어 이하 요약)
 3. 원인 코드(1라인 이상 필수, 불필요 라인은 '생략...' 으로 생략하고 핵심 코드 위주)
 4. [추천 또는 해결] 수정 내용 요약(7단어 이하 요약, P0일 경우에만 추가 )
@@ -145,7 +135,7 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 ```` 리포트 이슈 예)
 ## P0:Critical - 갱신일
 
-#### [P0:Crash nullptr][홍길동][60dc356][Huns.cpp/main()/Line:16-17]
+#### [P0:Crash nullptr][60dc356][홍길동][Huns.cpp/main()/Line:16-17]
 [원인] printf nullptr 역참조 크래시
 ``` 1줄 이상 필수
 int* pM = nullptr;
@@ -173,7 +163,7 @@ if (pM != nullptr)
 
 ## P4:Minimal - 2025/03/01
 
-#### [P4:Low quality][아무개][cafa6ab][Jung.h/global/Line:33]
+#### [P4:Low quality][cafa6ab][아무개][Jung.h/global/Line:33]
 [원인] iostream 미사용
 ```
 #include <iostream>
@@ -184,7 +174,7 @@ if (pM != nullptr)
   <br><br>- 의견 : 없애라
  </details>
 
-#### [P4:Quality low][아무개][cafa6ab][Huns.h/global/Line:1]
+#### [P4:Quality low][cafa6ab][아무개][Huns.h/global/Line:1]
 [원인] iostream 포함했으나 미사용
 ```
 #include <iostream>
