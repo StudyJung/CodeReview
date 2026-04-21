@@ -21,15 +21,17 @@ if %MOD% equ 1 (
 
 @echo %date%, %DAY%, %MOD%, %EFF% --model %MODEL%
 
-@echo "CodeReview_01"
+@echo "CodeReview"
 
 claude --dangerously-skip-permissions --model %MODEL% --effort max -p "%BIN%/CodeReview_01.md Execute"
 
-@echo "CodeReview_02"
-
-claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max -p "%BIN%/CodeReview_02.md Execute"
-
-@echo "CodeReview_03"
-
-claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort high -p "%BIN%/CodeReview_03.md Execute"
-::type "%BIN%/CodeReview_03.md" | codex exec --yolo -m gpt-5.4 "Execute" >nul 2>&1
+if errorlevel 1 (
+    @echo "Codex"
+    type "%BIN%/CodeReview_01.md" | codex exec --yolo -m gpt-5.4 "Execute"
+	type "%BIN%/CodeReview_02.md" | codex exec --yolo -m gpt-5.4 "Execute"
+	type "%BIN%/CodeReview_03.md" | codex exec --yolo -m gpt-5.4 "Execute"
+) else (
+	@echo "Claude"
+	claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max -p "%BIN%/CodeReview_02.md Execute"
+	claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort high -p "%BIN%/CodeReview_03.md Execute"
+)

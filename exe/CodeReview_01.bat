@@ -10,4 +10,8 @@ cd /d %CLD%
 @echo "CodeReview_01"
 
 claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max "%BIN%/CodeReview_01.md Execute"
-::type "%BIN%/CodeReview_01.md" | codex exec --yolo -m gpt-5.4 "Execute"
+
+if errorlevel 1 (
+    echo Claude failed, fallback to Codex
+    type "%BIN%/CodeReview_01.md" | codex exec --yolo -m gpt-5.4 "Execute"
+)
