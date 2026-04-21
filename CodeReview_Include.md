@@ -6,13 +6,13 @@
 | :--- | :--- |
 | **누적 Output** | CodeReview_20260421_1776776201.md |
 | **Period** | 2026/04/19 11:41:23 - 2026/04/20 08:25:39 |
-| **Model(Effort)** | Codex GPT-5 |
-| **Tools** | '/check', `git log`, `CodeReview.py clean-output` |
+| **Model(Effort)** | gpt-5.4 (Codex) |
+| **Tools** | '/review', `git diff`, `git log`, `Get-Content` |
 
 | 등급 | 건수 | 설명 |
 | :--- | :--- | :--- |
 | **P0:Critical** | 2개 | 2차 헤더 체인, dead code 컴파일 차단 |
-| **P1:High** | 2개 | main() 빌드 차단, 첫 include 헤더 누락 |
+| **P1:High** | 2개 | main() 빌드 차단, 저장소 내부 헤더 누락 |
 | [해결] | 0개 | - |
 | **합계** | 4개 |   |
 
@@ -67,14 +67,22 @@ printf("T3 %d.\n ", *pP);
   <br><br>- 기타 : `3136b89`에서 `pM` 직접 크래시는 제거되어 해결 상태지만, `main()` 상위 진입점 기준 현재 남은 차단 이슈는 이 라인이다.
  </details>
 
-#### [P1:Missing header][Huns][151efc0][Test.cpp/global/Line:1]
-[원인] Huns.h 헤더 누락
+#### [P1:Build missing header][Huns][151efc0][test/Test.cpp/global/Line:1-25]
+[원인] Huns.h 저장소 내부 부재
 ```cpp
 #include "Huns.h"
+
+생략...
+
+	printf("T4 %d.\n ", *p5);
+
+생략...
+
+	printf("T3 %d.\n ", *pP);
 ```
  <details>
-  <summary>상태 : [미결] , 위험 : 74, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/21</summary>
-  <br>- 설명 : `Test.cpp`의 첫 include 대상인 `Huns.h`가 저장소에 존재하지 않는다. 현재 소스는 전처리 단계에서 바로 중단되므로 아래 함수 본문 이슈보다 먼저 빌드를 막는다.
-  <br><br>- 의견 : 실제 의도가 `Test.h`라면 include를 복구하고, 별도 헤더가 맞다면 파일을 추가해 선언을 정리.
-  <br><br>- 기타 : 이 문제를 바로잡으면 `Test.h` 내부의 `Tests.h` 누락이 다음 차단 요소로 드러난다.
+  <summary>상태 : [미결] , 위험 : 84, 횟수 : 2, 추적 : 2026/04/19 - 2026/04/21</summary>
+  <br>- 설명 : `test/Test.cpp`는 첫 줄에서 `Huns.h`를 포함하지만 현재 `SrcPoint` 범위 안에는 해당 로컬 헤더가 없다. 번역 단위가 시작 단계에서 깨지므로 `printf`, `p5`, `pP` 같은 후속 의존성 이전에 파일 단독 빌드가 바로 막힌다.
+  <br><br>- 의견 : 실제 의도가 `Test.h`라면 include 대상을 교체하고, 별도 헤더가 필요하다면 저장소 내부에 추가해 필요한 선언을 닫아야 한다.
+  <br><br>- 기타 : 이 문제를 정리해도 `test/Test.h`의 `Tests.h` 누락이 이어지므로 헤더 체인을 함께 정리해야 한다.
  </details>

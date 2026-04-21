@@ -6,12 +6,12 @@
 | :--- | :--- |
 | **누적 Output** | CodeReview_20260421_1776776201.md |
 | **Period** | 2026/04/19 11:41:23 - 2026/04/20 08:25:39 |
-| **Model(Effort)** | Codex GPT-5 |
-| **Tools** | '/check', `git log`, `CodeReview.py clean-output` |
+| **Model(Effort)** | gpt-5.4 (Codex) |
+| **Tools** | '/review', `git diff`, `git log`, `Get-Content` |
 
 | 등급 | 건수 | 설명 |
 | :--- | :--- | :--- |
-| **P0:Critical** | 1개 | nullptr 역참조 제외 |
+| **P0:Critical** | 1개 | nullptr 역참조 제외 유지 |
 | **합계** | 1개 |   |
 
 ## P0:Critical - 2026/04/19
