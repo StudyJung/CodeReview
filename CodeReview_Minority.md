@@ -16,6 +16,42 @@ using namespace std;
   <br><br>- 기타 : 현재 `SrcPoint` 안에서 `Test.h` 사용처는 확인되지 않아 위험도를 `Test.cpp`보다는 낮게 책정했다.
  </details>
 
+## P2:Medium - 2026/04/21
+
+#### [P2:Build missing header][Huns][151efc0][test/Test.h/global/Line:1-5]
+[원인] Tests.h 의존성 누락
+```cpp
+#include <iostream>
+
+#include "Tests.h"
+
+using namespace std;
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 52, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/21</summary>
+  <br>- 설명 : `test/Test.h`는 저장소 안에 없는 `Tests.h`를 직접 포함하고 있어 헤더 단독 사용이 불가능하다. 현재 범위에서 이 헤더를 실제 포함하는 다른 소스는 보이지 않아 즉시 런타임 영향은 제한적이지만, 소비 지점이 생기는 순간 첫 include 단계에서 바로 통합 빌드가 깨진다.
+  <br><br>- 의견 : 외부 소비를 전제로 둔 헤더라면 누락된 로컬 의존성을 같이 관리하거나, 헤더 인터페이스를 최소화해 독립적으로 파싱 가능하게 유지해야 한다. 추가로 `using namespace std;`가 헤더 전역에 남아 있어 의존성 복구 후에는 포함한 쪽의 네임스페이스 오염도 함께 검토하는 편이 안전하다.
+  <br><br>- 기타 : 현재 `SrcPoint` 안에서 `Test.h` 사용처는 확인되지 않아 위험도를 `Test.cpp`보다는 낮게 책정했다.
+ </details>
+
+## P2:Medium - 2026/04/21
+
+#### [P2:Build missing header][Huns][151efc0][test/Test.h/global/Line:1-5]
+[원인] Tests.h 의존성 누락
+```cpp
+#include <iostream>
+
+#include "Tests.h"
+
+using namespace std;
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 52, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/21</summary>
+  <br>- 설명 : `test/Test.h`는 저장소 안에 없는 `Tests.h`를 직접 포함하고 있어 헤더 단독 사용이 불가능하다. 현재 범위에서 이 헤더를 실제 포함하는 다른 소스는 보이지 않아 즉시 런타임 영향은 제한적이지만, 소비 지점이 생기는 순간 첫 include 단계에서 바로 통합 빌드가 깨진다.
+  <br><br>- 의견 : 외부 소비를 전제로 둔 헤더라면 누락된 로컬 의존성을 같이 관리하거나, 헤더 인터페이스를 최소화해 독립적으로 파싱 가능하게 유지해야 한다. 추가로 `using namespace std;`가 헤더 전역에 남아 있어 의존성 복구 후에는 포함한 쪽의 네임스페이스 오염도 함께 검토하는 편이 안전하다.
+  <br><br>- 기타 : 현재 `SrcPoint` 안에서 `Test.h` 사용처는 확인되지 않아 위험도를 `Test.cpp`보다는 낮게 책정했다.
+ </details>
+
 ## P2:Medium - 2026/04/20
 
 #### [P2:Header pollution][정훈희][e474964][Test.h/global/Line:5]
