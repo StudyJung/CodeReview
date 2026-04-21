@@ -13,5 +13,5 @@ claude --dangerously-skip-permissions --model claude-sonnet-4-6 --effort max -p 
 
 if errorlevel 1 (
     echo Claude failed, fallback to Codex
-    type "%BIN%/CodeReview_01.md" | codex exec --yolo -m gpt-5.4 "Execute"  >nul 2>&1
+    codex exec --yolo -m gpt-5.4 "Execute" < "%BIN%\CodeReview_01.md" >nul 2>&1
 )
