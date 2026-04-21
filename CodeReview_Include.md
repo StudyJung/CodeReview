@@ -4,71 +4,19 @@
 ## 요약
 | 항목 | 내용 |
 | :--- | :--- |
-| **누적 Output** | CodeReview_20260420_1776643894.md |
-| **Period** | 2026/04/19 23:17:12 - 2026/04/20 09:01:08 |
-| **Model(Effort)** | claude-opus-4-7 (--effort max) |
-| **Tools** | '/check' |
+| **누적 Output** | CodeReview_20260421_1776776201.md |
+| **Period** | 2026/04/19 11:41:23 - 2026/04/20 08:25:39 |
+| **Model(Effort)** | Codex GPT-5 |
+| **Tools** | '/check', `git log`, `CodeReview.py clean-output` |
 
 | 등급 | 건수 | 설명 |
 | :--- | :--- | :--- |
-| **P0:Critical** | 5개 | nullptr 역참조(회귀), 미정의 심볼, 헤더 누락 |
-| **P1:High** | 0개 | - |
+| **P0:Critical** | 2개 | 2차 헤더 체인, dead code 컴파일 차단 |
+| **P1:High** | 2개 | main() 빌드 차단, 첫 include 헤더 누락 |
 | [해결] | 0개 | - |
-| **합계** | 5개 |   |
+| **합계** | 4개 |   |
 
 ## P0:Critical - 2026/04/20
-
-#### [P0:Crash regression][Huns][b41368f][Test.cpp/TEST()/Line:14]
-[원인] T7 nullptr 역참조 라인 재삽입 회귀
-```cpp
-	printf("T5 %d.\n ", *pT);
-
-printf("T7 %d.\n ", *pT);
-```
-[추천] 라인 제거 또는 유효 포인터 할당
-```cpp
-	printf("T5 %d.\n ", *pT);
-```
- <details>
-  <summary>상태 : [미결] , 위험 : 99, 횟수 : 3, 추적 : 2026/04/19 - 2026/04/20</summary>
-  <br>- 설명 : 커밋 `b41368f`에서 `printf("T7 %d.\n ", *pT);` 라인을 다시 추가하여 `nullptr` 역참조 크래시 회귀. 이전에 커밋 `3136b89`에서 제거되었던 코드가 재도입됨. 들여쓰기도 누락되어 코드 스타일도 깨짐. Exclude(`2722022`)에서 동일 패턴의 기존 제외 항목이 삭제되면서 재발.
-  <br><br>- 의견 : 해당 라인 삭제 또는 역참조 전 `nullptr` 체크 추가. Exclude 해제와 함께 재도입된 회귀이므로 근본 원인 수정 필요.
-  <br><br>- 기타 : `Test.cpp` Line 12의 T5 `*pT` 역참조(동일 `pT`)와 중복된 사이드 이펙트. Line 12 T5에서 이미 크래시하므로 도달 불가이나 잠재 크래시 위험 동일.
- </details>
-
-#### [P0:Undefined symbol][정훈희][3136b89][Test.cpp/main()/Line:25]
-[원인] 미정의 식별자 pP 역참조
-```cpp
-printf("T3 %d.\n ", *pP);
-```
-[추천] pP 선언 추가 또는 라인 제거
-```cpp
-int P = 0;
-int* pP = &P;
-printf("T3 %d.\n ", *pP);
-```
- <details>
-  <summary>상태 : [미결] , 위험 : 95, 횟수 : 8, 추적 : 2026/04/19 - 2026/04/20</summary>
-  <br>- 설명 : `pP`가 선언되지 않은 식별자로 `main()`에서 역참조 사용되어 컴파일 오류 발생. `Huns.h` 헤더 누락과 겹쳐 빌드 자체 불가. 커밋 `b41368f`에서 T7 라인이 추가되면서 라인 번호가 23 → 25로 이동.
-  <br><br>- 의견 : `pP`를 선언하거나 해당 라인 제거.
-  <br><br>- 기타 : `*pT`, `*pM`과 동일 패턴의 미정의/nullptr 포인터 역참조. 유사 심볼 `p5`도 line 9에 존재.
- </details>
-
-#### [P0:Include missing][정훈희][5af0c3a][Test.cpp/global/Line:1]
-[원인] Huns.h 헤더 파일 존재하지 않음
-```cpp
-#include "Huns.h"
-```
-[추천] 존재하는 헤더로 교체
-```cpp
-#include "Test.h"
-```
- <details>
-  <summary>상태 : [미결] , 위험 : 90, 횟수 : 7, 추적 : 2026/04/19 - 2026/04/20</summary>
-  <br>- 설명 : `test/Huns.h` 파일이 저장소에 없음. `test/Test.h`만 존재. 헤더 해석 불가로 컴파일 불가.
-  <br><br>- 의견 : `Test.h`로 교체 또는 `Huns.h` 파일 신규 생성.
-  <br><br>- 기타 : `Test.h`는 `#include "Tests.h"`를 포함하고 있으나 `Tests.h`도 저장소에 없음. 연쇄적 헤더 누락 문제.
- </details>
 
 #### [P0:Include missing][정훈희][5af0c3a][Test.h/global/Line:3]
 [원인] Tests.h 헤더 파일 존재하지 않음
@@ -103,4 +51,30 @@ if(  false)
   <br>- 설명 : `p5`가 선언되지 않은 식별자로 `TEST()`에서 역참조. `if(false)` 내부이지만 컴파일 대상이므로 빌드 오류 발생. 이중 공백(`if(  false)`)으로 코드 품질도 낮음.
   <br><br>- 의견 : dead code `if(false)` 블록 제거 또는 `p5`를 유효 포인터로 교체.
   <br><br>- 기타 : `*pP`(미선언)과 동일한 미선언 변수 패턴. 데드코드이므로 런타임 영향은 없으나 컴파일 에러로 빌드 차단.
+ </details>
+
+## P1:High - 2026/04/21
+
+#### [P1:Compile blocker][Huns][151efc0][Test.cpp/main()/Line:25]
+[원인] 미정의 포인터 pP 사용
+```cpp
+printf("T3 %d.\n ", *pP);
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 77, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/21</summary>
+  <br>- 설명 : `main()` 진입 함수에서 선언되지 않은 `pP`를 즉시 역참조한다. 현재는 식별자 해석 단계에서 컴파일이 멈추고, 나중에 임시로 `pP`를 선언해도 `pT`/`pM`과 같은 nullptr 패턴으로 재발할 가능성이 높다.
+  <br><br>- 의견 : 실제 필요한 변수라면 선언과 유효 초기화를 함께 추가하고, 그렇지 않으면 해당 출력 라인을 제거.
+  <br><br>- 기타 : `3136b89`에서 `pM` 직접 크래시는 제거되어 해결 상태지만, `main()` 상위 진입점 기준 현재 남은 차단 이슈는 이 라인이다.
+ </details>
+
+#### [P1:Missing header][Huns][151efc0][Test.cpp/global/Line:1]
+[원인] Huns.h 헤더 누락
+```cpp
+#include "Huns.h"
+```
+ <details>
+  <summary>상태 : [미결] , 위험 : 74, 횟수 : 1, 추적 : 2026/04/19 - 2026/04/21</summary>
+  <br>- 설명 : `Test.cpp`의 첫 include 대상인 `Huns.h`가 저장소에 존재하지 않는다. 현재 소스는 전처리 단계에서 바로 중단되므로 아래 함수 본문 이슈보다 먼저 빌드를 막는다.
+  <br><br>- 의견 : 실제 의도가 `Test.h`라면 include를 복구하고, 별도 헤더가 맞다면 파일을 추가해 선언을 정리.
+  <br><br>- 기타 : 이 문제를 바로잡으면 `Test.h` 내부의 `Tests.h` 누락이 다음 차단 요소로 드러난다.
  </details>

@@ -4,10 +4,10 @@
 ## 요약
 | 항목 | 내용 |
 | :--- | :--- |
-| **누적 Output** | CodeReview_20260420_1776643894.md |
-| **Period** | 2026/04/19 23:17:12 - 2026/04/20 09:01:08 |
-| **Model(Effort)** | claude-opus-4-7 (--effort max) |
-| **Tools** | '/check' |
+| **누적 Output** | CodeReview_20260421_1776776201.md |
+| **Period** | 2026/04/19 11:41:23 - 2026/04/20 08:25:39 |
+| **Model(Effort)** | Codex GPT-5 |
+| **Tools** | '/check', `git log`, `CodeReview.py clean-output` |
 
 | 등급 | 건수 | 설명 |
 | :--- | :--- | :--- |
