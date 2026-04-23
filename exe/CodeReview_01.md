@@ -18,7 +18,7 @@
 
 ## MUST
 
-**{$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Workers} 파일들 절대 사용 금지**
+**{$Include}, {$Exclude}, {$Resolve}, {$Minority}, {$Workers}, CodeReviewAI.md 절대 사용 금지**
 
 ## EXECUTE
 
