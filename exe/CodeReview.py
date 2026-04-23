@@ -57,7 +57,7 @@ def write_md(path: Path, content: str):
 _STATUS_RE  = re.compile(r'상태 : \[(미결|해결)\]')
 _RISK_RE    = re.compile(r'위험 : (\d+)')
 _REASON_RE  = re.compile(r'^- 사유 : (.*)$', re.MULTILINE)
-_HEAD_RE    = re.compile(r'^#### (\[(P(\d)):[^\]]+\]\[([^\]]*)\]\[[^\]]*\]\[[^\]]*\])')
+_HEAD_RE    = re.compile(r'^#### (\[(P(\d)):[^\]]+\]\[[^\]]*\]\[([^\]]*)\]\[[^\]]*\])')
 _SECTION_RE = re.compile(r'^## (P\d:[A-Za-z]+) - \d{4}/\d{2}/\d{2}')
 
 # 이슈 필수 구성요소 검증 (list 표시용)
