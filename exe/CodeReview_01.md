@@ -22,7 +22,7 @@
 
 ## EXECUTE
 
-* Execute01_1: '{$WrkPoint}/exe/CodeReview.md', '{$WrkPoint}/exe/CodeReview.py' Loading
+* Execute01_1: '{$WrkPoint}/exe/{$Main}', '{$WrkPoint}/exe/{$Python}' Loading
 * Execute01_2: {$SrcPoint}에 {$GitSync}
 * Execute01_3: {$Python} clean-output
 * Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위 코드 리뷰" → 코드 리뷰 결과 중 이슈들을 커밋별로 [미결]과 [해결]로 분류
