@@ -6,7 +6,7 @@
 
 ## EXECUTE
 
-- Execute03_1: '{$WrkPoint}/exe/CodeReview.md', '{$WrkPoint}/exe/CodeReview.py' Loading
+- Execute03_1: '{$WrkPoint}/exe/{$Main}', '{$WrkPoint}/exe/{$Python}' Loading
 
 - Execute03_2: {$Python} drop-resolve
 
