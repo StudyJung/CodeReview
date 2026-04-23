@@ -1,5 +1,9 @@
 # CodeReview [ABSOLUTE | STRICT ORDER | NO SKIP | SILENT | PRODUCTION]
 
+## MUST
+
+**CodeReviewAI.md 절대 사용 금지**
+
 ## EXECUTE
 
 - Execute03_1: './exe/CodeReview.md', './exe/CodeReview.py' Loading
