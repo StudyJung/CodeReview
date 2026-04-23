@@ -129,7 +129,7 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
  
 ### 이슈(내용 포함)
 
-1. [중요도:2개의 영단어 요약][커밋 해쉬 작업자 이름만][커밋 해쉬 1개][파일명 1개/함수면 또는 클래스명 1개/Line:33-100]
+1. [중요도:2개의 영단어 요약][커밋 해쉬 1개][커밋 해쉬 1개에 대한 작업자 이름만][파일명 1개/함수면 또는 클래스명 1개/Line:33-100]
 2. [원인] 짧게 내용 요약(7단어 이하 요약)
 3. 원인 코드(1라인 이상 필수, 불필요 라인은 '생략...' 으로 생략하고 핵심 코드 위주)
 4. [추천 또는 해결] 수정 내용 요약(7단어 이하 요약, P0일 경우에만 추가 )
@@ -139,7 +139,7 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 ```` 리포트 이슈 예)
 ## P0:Critical - 갱신일
 
-#### [P0:Crash nullptr][홍길동][60dc356][Huns.cpp/main()/Line:16-17]
+#### [P0:Crash nullptr][60dc356][홍길동][Huns.cpp/main()/Line:16-17]
 [원인] printf nullptr 역참조 크래시
 ``` 1줄 이상 필수
 int* pM = nullptr;
@@ -167,7 +167,7 @@ if (pM != nullptr)
 
 ## P4:Minimal - 2025/03/01
 
-#### [P4:Low quality][아무개][cafa6ab][Jung.h/global/Line:33]
+#### [P4:Low quality][cafa6ab][아무개][Jung.h/global/Line:33]
 [원인] iostream 미사용
 ```
 #include <iostream>
@@ -178,7 +178,7 @@ if (pM != nullptr)
   <br><br>- 의견 : 없애라
  </details>
 
-#### [P4:Quality low][아무개][cafa6ab][Huns.h/global/Line:1]
+#### [P4:Quality low][cafa6ab][아무개][Huns.h/global/Line:1]
 [원인] iostream 포함했으나 미사용
 ```
 #include <iostream>
