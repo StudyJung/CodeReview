@@ -6,7 +6,7 @@
 
 ## EXECUTE
 
-- Execute02_1: './exe/CodeReview.md' Loading
+- Execute02_1: '{$WrkPoint}/exe/CodeReview.md' Loading
 
 - Execute02_2: {$Include}에 최신{$Output}의 P0-P1 이슈들만 병합(중요도,횟수,점수,갱신일 업데이트) 
 
