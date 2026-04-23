@@ -76,6 +76,8 @@ $Scope = 오늘이 (일,수,토)요일이면 'LastTag이후 ~ HEAD까지 코드 
 
 **{$Resolve}, {$Minority}, {$Workers} 파일들은 절대 읽기 금지, 이슈 수정없이 오직 그대로 쓰기만 사용**
 
+**CodeReviewAI.md 절대 사용 금지**
+
 ## RULE
 
 **EXECUTE의 내용만 행동(EXECUTE 외 다른 행동 절대 금지)**
