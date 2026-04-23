@@ -18,6 +18,8 @@ $Branch = main
 
 $GitSync = Git(Add -> Commit -> Pull -> Push)
 
+$Main = CodeReview.md
+
 $Python = CodeReview.py
 
 $Include = CodeReview_Include.md
