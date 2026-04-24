@@ -12,9 +12,9 @@
 
 **RV5: 로그인/아웃(중복 접속, 로딩 처리, 좀비, 고스트 등), 재화(Money, Ruby, Bonus, Item 등), 손실/제재/결제(Restriction, Regulation, Consume), 게임플레이(Play, Room, Result), 크래쉬, 메모리, 포인터, 클라이언트 패킷 값 체크 관련은 연관된 상위 호출 부분까지 자세하고 세밀하게 검토 후 중요도를 조금 높게 책정(위험도 가산)**
 
-**RV6: SQL Injection, Silent Bypass(if,switch,for), Dup Skip Return 관련은 중요도를 조금 낮게 책정(위험도 감산)**
+**RV6: SQL Injection, Silent Bypass(if,switch,for), Dup Skip Return 관련은 중요도를 조금 낮게 책정(위험도 조금 감산)**
 
-**RV7: 원인 코드 소스 주석이 이슈와 동일하거나 스키마 형상 관리나 하위 호환성이나 Test Code, Cheat Command, Tracking Log, Tool 관련은 중요도를 많이 낮게 책정(위험도 감산)**
+**RV7: 원인 코드 소스 주석이 이슈와 동일하거나 스키마 형상 관리나 하위 호환성이나 Test Code, Cheat Command, Tracking Log, Tool 관련은 중요도를 많이 낮게 책정(위험도 많이 감산)**
 
 ## MUST
 
