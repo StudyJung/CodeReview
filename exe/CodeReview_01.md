@@ -14,7 +14,7 @@
 
 **RV6: SQL Injection, Silent Bypass(if,switch,for), Dup Skip Return 관련은 중요도를 조금 낮게 책정(위험도 조금 감산)**
 
-**RV7: 원인 코드 소스 주석이 이슈와 동일하거나 스키마 형상 관리나 하위 호환성이나 Test Code, Cheat Command, Tracking Log, Tool 관련은 중요도를 많이 낮게 책정(위험도 많이 감산)**
+**RV7: 원인 코드 소스 주석이 이슈와 동일하거나 스키마 형상 관리나 하위 호환성이나 서버 로컬 타임, Test Code, Cheat Command, Tracking Log, Tool 관련은 중요도를 많이 낮게 책정(위험도 많이 감산)**
 
 ## MUST
 
