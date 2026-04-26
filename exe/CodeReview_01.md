@@ -14,7 +14,7 @@
 
 **RV6: SQL Injection, Silent Bypass(if,switch,for), Dup Skip Return, Timezone Localtime 관련은 중요도를 조금 낮게 책정(위험도 조금 감산)**
 
-**RV7: 원인 코드 소스 주석이 이슈와 동일, 스키마 형상 관리, 하위 호환성, Test Code, Cheat Command, Tracking Log, Tool 관련은 중요도를 많이 낮게 책정(위험도 많이 감산)**
+**RV7: 원인 코드 소스 주석이 이슈와 동일, 스키마 형상 관리, 하위 호환성, Test, Cheat, Track, Tool 관련은 중요도를 많이 낮게 책정(위험도 많이 감산)**
 
 **RV8: 원인 코드와 이슈의 커밋(해쉬, 담당자)이 맞는지 다시 한번 확인하여 보정. 원인 코드를 이슈 커밋들에서 찾을 수 없다면 담당자를 '정훈희'로 지정**
 
