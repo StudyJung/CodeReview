@@ -2,8 +2,6 @@
 
 ## MUST
 
-**CodeReviewAI.md 절대 사용 금지**
-
 ## EXECUTE
 
 - Execute03_1: '{$WrkPoint}/exe/{$Main}', '{$WrkPoint}/exe/{$Python}' Loading
