@@ -2,7 +2,7 @@
 
 ## MUST
 
-**{$Resolve}, {$Minority}, {$Workers}, CodeReviewAI.md 절대 사용 금지**
+**{$Resolve}, {$Minority}, {$Workers} 절대 사용 금지**
 
 ## EXECUTE
 
