@@ -26,6 +26,6 @@
 * Execute01_2: {$SrcPoint}에 {$GitSync}
 * Execute01_3: {$Python} clean-output
 * Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위로만 코드 리뷰"
-* Execute01_5: 코드 리뷰 결과 중 [미결] 이슈들만 RV1-9 규칙을 적용하여 중요도와 위험도 및 커밋(해쉬/담당자) 책정
-* Execute01_6: 최신{$Output}을 생성하여 [미결] 이슈들만 저장하고, 맨위에 요약 정보 추가
+* Execute01_5: 코드 리뷰 결과 중 [미결] 이슈들만 RV1-7 규칙을 적용하여 중요도와 위험도 및 커밋(해쉬/담당자) 책정
+* Execute01_6: 최신{$Output}을 생성하여 코드 리뷰 결과 중 [미결] 이슈들만 저장하고, 맨위에 요약 정보 추가
 * Execute01_7: {$WrkPoint}에 {$GitSync}
