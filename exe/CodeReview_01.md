@@ -18,12 +18,20 @@
 
 ## EXECUTE
 
-* Execute01_1: '{$WrkPoint}/exe/{$Main}', '{$WrkPoint}/exe/{$Python}' Loading
-* Execute01_2: {$SrcPoint}에 {$GitSync}
-* Execute01_3: {$Python} clean-output
-* Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위로만 코드 리뷰"
-* Execute01_5: 코드 리뷰 결과들을 HEAD 소스 기준으로 이슈와 이슈의 상하위 함수들 및 이슈가 호출되는 소스들을 체크하여 [해결]과 [미결]로 이슈 분류
-* Execute01_6: 코드 리뷰 결과들 중 [미결] 이슈들만 RV1-5 규칙을 적용하여 중요도와 위험도 및 가장 관련 깊은 커밋(해쉬/담당자) 책정
-* Execute01_7: 코드 리뷰 결과들 중 [미결] 이슈들만 원인 코드와 이슈 커밋(해쉬/담당자)의 소스 변경점이 일치하는지 다시 확인 → 일치하지 않을 경우 리뷰 내 커밋들을 다시 확인 → 리뷰 내 커밋들에 없다면 '000000/미지정'로 지정
-* Execute01_8: 코드 리뷰 결과들 중 [미결] 이슈들만 최신{$Output}을 생성하여 저장하고, 맨위에 요약 정보 추가
-* Execute01_9: {$WrkPoint}에 {$GitSync}
+- Execute01_1: '{$WrkPoint}/exe/{$Main}', '{$WrkPoint}/exe/{$Python}' Loading
+
+- Execute01_2: {$SrcPoint}에 {$GitSync}
+
+- Execute01_3: {$Python} clean-output
+
+- Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위로만 코드 리뷰"
+
+- Execute01_5: 코드 리뷰 결과들을 HEAD 소스 기준으로 이슈와 이슈의 상하위 함수들 및 이슈가 호출되는 소스들을 체크하여 [해결]과 [미결]로 이슈 분류
+
+- Execute01_6: 코드 리뷰 결과들 중 [미결] 이슈들만 RV1-5 규칙을 적용하여 중요도와 위험도 및 가장 관련 깊은 커밋(해쉬/담당자) 책정
+
+- Execute01_7: 코드 리뷰 결과들 중 [미결] 이슈들만 원인 코드와 이슈 커밋(해쉬/담당자)의 소스 변경점이 일치하는지 다시 확인 → 일치하지 않을 경우 리뷰 내 커밋들을 다시 확인 → 리뷰 내 커밋들에 없다면 '000000/미지정'로 지정
+
+- Execute01_8: 코드 리뷰 결과들 중 [미결] 이슈들만 최신{$Output}을 생성하여 저장하고, 맨위에 요약 정보 추가
+
+- Execute01_9: {$WrkPoint}에 {$GitSync}
