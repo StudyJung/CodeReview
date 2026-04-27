@@ -29,7 +29,7 @@
 * Execute01_1: '{$WrkPoint}/exe/{$Main}', '{$WrkPoint}/exe/{$Python}' Loading
 * Execute01_2: {$SrcPoint}에 {$GitSync}
 * Execute01_3: {$Python} clean-output
-* Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위 코드 리뷰" → 코드 리뷰 결과 중 이슈들을 커밋별로 [미결]과 [해결]로 분류
+* Execute01_4: {$Command} "{$SrcPoint}에서만 {$Scope}범위로만 코드 리뷰" → RV1-9 규칙으로 코드 리뷰 결과 중 이슈들을 커밋별로 [미결]과 [해결]로 분류하여 중요도와 위험도 및 담당자 책정
 * Execute01_5: 코드 리뷰 결과 [미결] 이슈들만 최신{$Output}을 생성하여 저장
 * Execute01_6: 최신{$Output}의 맨위에 요약 갱신 저장
 * Execute01_7: {$WrkPoint}에 {$GitSync}
